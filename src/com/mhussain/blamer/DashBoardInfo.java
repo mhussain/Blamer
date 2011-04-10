@@ -1,14 +1,21 @@
 package com.mhussain.blamer;
 
 import org.json.*;
+
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.*;
+import java.util.ArrayList;
 
 public class DashBoardInfo {
 
 	private final String DEFAULT_JENKINS_SERVER = "http://10.0.2.2:8900/";
 	private String server = null;
+	private JSONObject build_data = null;
+	private ArrayList<Build> builds = new ArrayList<Build>();
+	private ArrayList<String> buildNames = new ArrayList<String>();
 	
 	public DashBoardInfo() {
 		this(null, null);
@@ -16,10 +23,17 @@ public class DashBoardInfo {
 	
 	public DashBoardInfo(String host, String port) {
 		if (null == host || null == port) {
-			server = DEFAULT_JENKINS_SERVER;
+			this.server = DEFAULT_JENKINS_SERVER;
 		}
 		else {
-			server = host.concat(":").concat(port);
+			this.server = host.concat(":").concat(port);
+		}
+		
+		try {
+			this.getDataFromServer();
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -27,9 +41,8 @@ public class DashBoardInfo {
 		return this.server;
 	}
 	
-	public JSONObject getDataFromServer() throws Exception {
+	private void getDataFromServer() throws Exception {
 		StringBuffer data = new StringBuffer();
-		JSONObject json_data = null;
 		try {
 			URL yahoo = new URL(this.getServerAddress());
 	        URLConnection yc = yahoo.openConnection();
@@ -38,19 +51,54 @@ public class DashBoardInfo {
 	                                yc.getInputStream()));
 	        String inputLine = null;
 
-	        int i = 0;
 	        while ((inputLine = in.readLine()) != null) {
 	            data.append(inputLine);
-	            i++;
 	        }
 	        in.close();
-	        json_data = new JSONObject(data.toString());
+	        this.build_data = new JSONObject(data.toString());
 		} 
 		catch (Exception e) {
 			throw new Exception("Something bad happened in getting the JSON from " + this.getServerAddress() + ":" + e.toString() );
 		}
-		return json_data;
+		
+		this.populateBuilds(this.build_data);
 	}
+	
+	private void populateBuilds(JSONObject build_data) {
+		JSONArray jobs = new JSONArray();
+		try {
+			jobs = build_data.getJSONArray("jobs");
+		} 
+		catch (JSONException jsonException) {
+			jsonException.printStackTrace();
+		}
+    	
+		JSONObject job = null;
+		
+    	for (int job_index=0;job_index<jobs.length();job_index++) {
+    		
+    		try {
+    			job = jobs.getJSONObject(job_index);
+    			String name = (String)job.get("name"); 
+    			this.builds.add(
+    				new Build(name, (String)job.get("url"), (String)job.get("lastBuildStatus"))
+    			);
+    			this.buildNames.add(name);
+			} 
+    		catch (JSONException e) {
+				e.printStackTrace();
+			}
+    	}
+	}
+	
+	public ArrayList<Build> getBuildInfo() {
+		return this.builds;
+	}
+	
+	public ArrayList<String> getBuildNames() {
+		return this.buildNames;
+	}
+	
 
 	
 }

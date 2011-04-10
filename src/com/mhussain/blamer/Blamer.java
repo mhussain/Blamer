@@ -35,44 +35,37 @@ public class Blamer extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
 
     	DashBoardInfo dashboard = new DashBoardInfo();
-    	JSONObject build_data = null;
+//    	JSONObject build_data = null;
     	
-    	try {
-    		build_data = dashboard.getDataFromServer();
-    	}
-    	catch (Exception e) {
-    		Toast.makeText(Blamer.this, e.toString(), Toast.LENGTH_LONG).show();
-    	}
-    	
-    	if (null == build_data) {
-    		Toast.makeText(Blamer.this, "JSONData is null", Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	JSONArray jobs = new JSONArray();
-		try {
-			jobs = build_data.getJSONArray("jobs");
-		} catch (JSONException e1) {
-			e1.printStackTrace();
-		}
-    	
-		JSONObject job = null;
-    	for (int job_index=0;job_index<jobs.length();job_index++) {
-    		try {
-    			job = jobs.getJSONObject(job_index);
-    			String name = (String)job.get("name"); 
-    			builds.add(
-    				new Build(name, (String)job.get("url"), (String)job.get("lastBuildStatus"))
-    			);
-    			buildNames.add(name);
-			} 
-    		catch (JSONException e) {
-				e.printStackTrace();
-			}
-    	}
+////    	if (null == build_data) {
+////    		Toast.makeText(Blamer.this, "JSONData is null", Toast.LENGTH_SHORT).show();
+////    	}
+//    	
+//    	JSONArray jobs = new JSONArray();
+//		try {
+//			jobs = build_data.getJSONArray("jobs");
+//		} catch (JSONException e1) {
+//			e1.printStackTrace();
+//		}
+//    	
+//		JSONObject job = null;
+//    	for (int job_index=0;job_index<jobs.length();job_index++) {
+//    		try {
+//    			job = jobs.getJSONObject(job_index);
+//    			String name = (String)job.get("name"); 
+//    			builds.add(
+//    				new Build(name, (String)job.get("url"), (String)job.get("lastBuildStatus"))
+//    			);
+//    			buildNames.add(name);
+//			} 
+//    		catch (JSONException e) {
+//				e.printStackTrace();
+//			}
+//    	}
     	    	
     	super.onCreate(savedInstanceState);
 
-    	this.setListAdapter(new SpecialAdapter<String>(this, R.layout.dashboard, buildNames, builds));
+    	this.setListAdapter(new SpecialAdapter<String>(this, R.layout.dashboard, dashboard.getBuildNames(), dashboard.getBuildInfo()));
 
     	ListView lv = getListView();
     	lv.setTextFilterEnabled(true);
