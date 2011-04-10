@@ -44,6 +44,7 @@ public class BuildDashboard extends ListActivity {
     	);
 
     	ListView lv = getListView();
+    	lv.setBackgroundColor(Color.WHITE);
     	lv.setTextFilterEnabled(true);
     }
     

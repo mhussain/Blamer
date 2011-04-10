@@ -11,42 +11,42 @@
     "jobs":
     [
         {
-            "name":"Marvin",
+            "name":"Mordor",
             "url":"http://localhost:8900/marvin",
             "lastBuildStatus": "success"
         },
         {
-            "name":"REAPA-Development",
+            "name":"Baradur",
             "url":"http://localhost:8900/development",
             "lastBuildStatus": "success"
         },
         {
-            "name":"REAPA-Gandalf",
+            "name":"Minastirith",
             "url":"http://localhost:8900/gandalf",
             "lastBuildStatus": "success"
         },
         {
-            "name":"REAPA-Labs",
+            "name":"Helmsdeep",
             "url":"http://localhost:8900/labs",
             "lastBuildStatus": "success"
         },
         {
-            "name":"REAPA-Production",
+            "name":"Gondor",
             "url":"http://localhost:8900/production",
             "lastBuildStatus": "failure"
         },
         {
-            "name":"REAPA-QA",
+            "name":"Minasmorgul",
             "url":"http://localhost:8900/qa",
             "lastBuildStatus": "failure"
         },
         {
-            "name":"REAPA-Staging",
+            "name":"Edoras",
             "url":"http://localhost:8900/staging",
             "lastBuildStatus": "failure"
         },
         {
-            "name":"REAPA-UnitTestApp",
+            "name":"Isengard",
             "url":"http://localhost:8900/unit",
             "lastBuildStatus": "building"
         }

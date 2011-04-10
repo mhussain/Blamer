@@ -138,7 +138,7 @@ class MyHandler(BaseHTTPRequestHandler):
 def main():
     try:
         server = HTTPServer(('', 8900), MyHandler)
-        print "Starting Hudson on port 8900\n"
+        print "Starting Hudson/Jenkins on port 8900\n"
         server.serve_forever()
     except KeyboardInterrupt:
         print '^C received, shutting down server'
