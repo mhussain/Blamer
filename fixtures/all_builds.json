@@ -1,0 +1,69 @@
+{
+    "assignedLabels":
+    [
+        {}
+    ],
+    "mode":"NORMAL",
+    "nodeDescription":"the master Hudson node",
+    "nodeName":"",
+    "numExecutors":2,
+    "description":null,
+    "jobs":
+    [
+        {
+            "name":"Marvin",
+            "url":"http://localhost:8900/marvin",
+            "lastBuildStatus": "success"
+        },
+        {
+            "name":"REAPA-Development",
+            "url":"http://localhost:8900/development",
+            "lastBuildStatus": "success"
+        },
+        {
+            "name":"REAPA-Gandalf",
+            "url":"http://localhost:8900/gandalf",
+            "lastBuildStatus": "success"
+        },
+        {
+            "name":"REAPA-Labs",
+            "url":"http://localhost:8900/labs",
+            "lastBuildStatus": "success"
+        },
+        {
+            "name":"REAPA-Production",
+            "url":"http://localhost:8900/production",
+            "lastBuildStatus": "failure"
+        },
+        {
+            "name":"REAPA-QA",
+            "url":"http://localhost:8900/qa",
+            "lastBuildStatus": "failure"
+        },
+        {
+            "name":"REAPA-Staging",
+            "url":"http://localhost:8900/staging",
+            "lastBuildStatus": "failure"
+        },
+        {
+            "name":"REAPA-UnitTestApp",
+            "url":"http://localhost:8900/unit",
+            "lastBuildStatus": "building"
+        }
+    ],
+    "overallLoad":{},
+    "primaryView": {
+            "name":"All",
+            "url":"http://reapa.local:8080/hudson/"
+    },
+    "slaveAgentPort":0,
+    "useCrumbs":false,
+    "useSecurity":false,
+    "views":
+    [
+        {
+            "name":"All",
+            "url":"http://reapa.local:8080/hudson/"
+        }
+    ]
+}
