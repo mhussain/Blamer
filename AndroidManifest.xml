@@ -15,7 +15,7 @@
         </activity>
         
         <activity
-        	android:name=".ConnectActivity">
+        	android:name="BuildDashboard">
         	<intent-filter>
         		<action android:name="android.intent.action.ACTION_VIEW" />
                 <category android:name="android.intent.category.ALTERNATIVE" />

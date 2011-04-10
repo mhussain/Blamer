@@ -7,18 +7,18 @@ import java.io.InputStreamReader;
 import java.net.*;
 import java.util.ArrayList;
 
-public class DashBoardInfo {
+public class BuildJSON {
 
 	private String server = null;
 	private JSONObject build_data = null;
 	private ArrayList<Build> builds = new ArrayList<Build>();
 	private ArrayList<String> buildNames = new ArrayList<String>();
 	
-	public DashBoardInfo() {
+	public BuildJSON() {
 		this(null, null);
 	}
 	
-	public DashBoardInfo(String host, String port) {
+	public BuildJSON(String host, String port) {
 		
 		this.server = host.concat(":").concat(port);
 		try {

@@ -17,10 +17,9 @@ import com.mhussain.blamer.R;
 
 import android.app.ListActivity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 
-public class ConnectActivity extends ListActivity {
+public class BuildDashboard extends ListActivity {
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class ConnectActivity extends ListActivity {
 		Bundle serverInfo = getIntent().getExtras();
 		
 		
-    	DashBoardInfo dashboard = new DashBoardInfo(
+    	BuildJSON dashboard = new BuildJSON(
     		serverInfo.getString("host"),
     		serverInfo.getString("port")
     	);
@@ -77,7 +76,7 @@ public class ConnectActivity extends ListActivity {
     		
     		build_element.setOnClickListener(new OnClickListener(){
 				public void onClick(View view) {
-					Toast.makeText(ConnectActivity.this, build.getUrl(), Toast.LENGTH_SHORT).show();
+					Toast.makeText(BuildDashboard.this, build.getUrl(), Toast.LENGTH_SHORT).show();
 				}
     			
     		});

@@ -47,7 +47,7 @@ public class Blamer extends Activity {
 				serverInfo.putString("host", hostname);
 				serverInfo.putString("port", portNumber);
 				
-				Intent showBuildInfo = new Intent(Blamer.this, ConnectActivity.class);
+				Intent showBuildInfo = new Intent(Blamer.this, BuildDashboard.class);
 				showBuildInfo.putExtras(serverInfo);
 				startActivity(showBuildInfo);
 			}
@@ -102,7 +102,7 @@ public class Blamer extends Activity {
     		build_element.setOnClickListener(new OnClickListener(){
 
 				public void onClick(View view) {
-					startActivity(new Intent(Blamer.this, ConnectActivity.class));
+					startActivity(new Intent(Blamer.this, BuildDashboard.class));
 				}
     			
     		});
