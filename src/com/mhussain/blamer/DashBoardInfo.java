@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class DashBoardInfo {
 
-	private final String DEFAULT_JENKINS_SERVER = "http://10.0.2.2:8900/";
 	private String server = null;
 	private JSONObject build_data = null;
 	private ArrayList<Build> builds = new ArrayList<Build>();
@@ -20,13 +19,8 @@ public class DashBoardInfo {
 	}
 	
 	public DashBoardInfo(String host, String port) {
-		if (null == host || null == port) {
-			this.server = DEFAULT_JENKINS_SERVER;
-		}
-		else {
-			this.server = host.concat(":").concat(port);
-		}
 		
+		this.server = host.concat(":").concat(port);
 		try {
 			this.getDataFromServer();
 		} 
