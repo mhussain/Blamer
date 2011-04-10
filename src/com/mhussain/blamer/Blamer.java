@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.mhussain.blamer.R;
 
 import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
