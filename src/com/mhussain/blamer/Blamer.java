@@ -28,39 +28,21 @@ import java.io.*;
 
 public class Blamer extends ListActivity {
 
-	private final String JENKINS_SERVER = "http://10.0.2.2:8900/";
 	private ArrayList<Build> builds = new ArrayList<Build>();
 	private ArrayList<String> buildNames = new ArrayList<String>();
-	
-	public JSONObject getDataFromServer() {
-		StringBuffer data = new StringBuffer();
-		JSONObject json_data = null;
-		try {
-			URL yahoo = new URL(JENKINS_SERVER);
-	        URLConnection yc = yahoo.openConnection();
-	        BufferedReader in = new BufferedReader(
-	                                new InputStreamReader(
-	                                yc.getInputStream()));
-	        String inputLine = null;
-
-	        int i = 0;
-	        while ((inputLine = in.readLine()) != null) {
-	            data.append(inputLine);
-	            i++;
-	        }
-	        in.close();
-	        json_data = new JSONObject(data.toString());
-		} 
-		catch (Exception e) {
-			Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-		}
-		return json_data;
-	}
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-    	final JSONObject build_data = getDataFromServer();
+    	DashBoardInfo dashboard = new DashBoardInfo();
+    	JSONObject build_data = null;
+    	
+    	try {
+    		build_data = dashboard.getDataFromServer();
+    	}
+    	catch (Exception e) {
+    		Toast.makeText(Blamer.this, e.toString(), Toast.LENGTH_LONG).show();
+    	}
     	
     	if (null == build_data) {
     		Toast.makeText(Blamer.this, "JSONData is null", Toast.LENGTH_SHORT).show();
