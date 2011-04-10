@@ -2,8 +2,6 @@ package com.mhussain.blamer;
 
 import org.json.*;
 
-import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.*;
