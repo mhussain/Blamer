@@ -3,3 +3,9 @@
 fixtures/.DS_Store
 .DS_Store
 *.class
+bin/com/mhussain/blamer/Blamer$1.class
+bin/com/mhussain/blamer/Blamer$SpecialAdapter.class
+bin/com/mhussain/blamer/Blamer.class
+bin/com/mhussain/blamer/R$id.class
+bin/com/mhussain/blamer/R$layout.class
+bin/com/mhussain/blamer/R$string.class
