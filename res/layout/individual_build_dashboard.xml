@@ -5,84 +5,128 @@
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
 >
+    <LinearLayout android:orientation="horizontal"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:paddingTop="15dp"
+	>
+	    	
+		<TextView 
+			android:id="@+id/build_name_label"
+			android:text="Build Name"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+		<TextView 
+			android:id="@+id/build_name"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+	</LinearLayout>
 	
-	<TextView 
-		android:id="@+id/build_name_label"
-		android:text="Build Name"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
-	<TextView 
-		android:id="@+id/build_name"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
+    <LinearLayout android:orientation="horizontal"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:paddingTop="15dp"
+	>
+
+		<TextView 
+			android:id="@+id/build_desc_label"
+			android:text="Desc"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"		    
+		    android:textSize="10sp" >
+		</TextView>
+		<TextView 
+			android:id="@+id/build_desc"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+	</LinearLayout>
 	
-	<TextView 
-		android:id="@+id/build_desc_label"
-		android:text="Desc"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
-	<TextView 
-		android:id="@+id/build_desc"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
+	<LinearLayout android:orientation="horizontal"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:paddingTop="15dp"
+	>
 	
-	<TextView 
-		android:id="@+id/last_commit_id_label"
-		android:text="What"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
-	<TextView 
-		android:id="@+id/last_commit_id"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
+		<TextView 
+			android:id="@+id/last_commit_id_label"
+			android:text="What"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"		    
+		    android:textSize="10sp" >
+		</TextView>
+		<TextView 
+			android:id="@+id/last_commit_id"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+	</LinearLayout>
 	
-	<TextView 
-		android:id="@+id/last_committer_label"
-		android:text="Who"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
-	<TextView 
-		android:id="@+id/last_committer"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
+    <LinearLayout android:orientation="horizontal"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:paddingTop="15dp"
+	>
+		
+		<TextView 
+			android:id="@+id/last_committer_label"
+			android:text="Who"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"		    
+		    android:textSize="10sp" >
+		</TextView>
+		<TextView 
+			android:id="@+id/last_committer"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+	</LinearLayout>
 	
-	<TextView 
-		android:id="@+id/last_commit_date_label"
-		android:text="When"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
-	<TextView 
-		android:id="@+id/last_commit_date"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="10sp" >
-	</TextView>
+    <LinearLayout android:orientation="horizontal"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:paddingTop="15dp"
+	>
+	
+		<TextView 
+			android:id="@+id/last_commit_date_label"
+			android:text="When"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"		    
+		    android:textSize="10sp" >
+		</TextView>
+		<TextView 
+			android:id="@+id/last_commit_date"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:padding="10dp"
+		    android:textColor="#000000"
+		    android:textSize="10sp" >
+		</TextView>
+	</LinearLayout>
 </LinearLayout>

@@ -82,6 +82,9 @@ public class BuildDashboard extends ListActivity {
 					
 					if (build.failed()) {
 						Intent individualBuildInfo = new Intent(BuildDashboard.this, IndividualBuildDashboard.class);
+						Bundle buildInfo = new Bundle();
+						buildInfo.putSerializable("build", build);
+						individualBuildInfo.putExtras(buildInfo);
 						startActivity(individualBuildInfo);
 					}
 					else if(build.isBuilding()) {
