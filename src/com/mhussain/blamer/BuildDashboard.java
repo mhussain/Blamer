@@ -1,5 +1,6 @@
 package com.mhussain.blamer;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import com.mhussain.blamer.R;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 
 public class BuildDashboard extends ListActivity {
@@ -37,7 +39,7 @@ public class BuildDashboard extends ListActivity {
     	this.setListAdapter(
     		new SpecialAdapter<String>(
     			this,
-    			R.layout.dashboard, 
+    			R.layout.build_dashboard, 
     			dashboard.getBuildNames(), 
     			dashboard.getBuildInfo()
     		)
@@ -64,10 +66,10 @@ public class BuildDashboard extends ListActivity {
     		 
     		if (null == all_builds) {
     			LayoutInflater inflater = getLayoutInflater();
-    			all_builds = inflater.inflate(R.layout.dashboard, null);
+    			all_builds = inflater.inflate(R.layout.build_dashboard, null);
     		} 
     		
-    		TextView build_element = (TextView)all_builds.findViewById(R.id.build);
+    		final TextView build_element = (TextView)all_builds.findViewById(R.id.build);
     		
     		all_builds.setBackgroundColor(Color.WHITE);
     		final Build build  = builds.get(position);
@@ -77,7 +79,17 @@ public class BuildDashboard extends ListActivity {
     		
     		build_element.setOnClickListener(new OnClickListener(){
 				public void onClick(View view) {
-					Toast.makeText(BuildDashboard.this, build.getUrl(), Toast.LENGTH_SHORT).show();
+					
+					if (build.failed()) {
+						Intent individualBuildInfo = new Intent(BuildDashboard.this, IndividualBuildDashboard.class);
+						startActivity(individualBuildInfo);
+					}
+					else if(build.isBuilding()) {
+						Toast.makeText(BuildDashboard.this, "Let it build first", Toast.LENGTH_LONG).show();
+					}
+					else {
+						Toast.makeText(BuildDashboard.this, "It was successful, why do you care?", Toast.LENGTH_LONG).show();
+					}
 				}
     			
     		});

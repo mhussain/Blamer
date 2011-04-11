@@ -1,4 +1,4 @@
- package com.mhussain.blamer;
+package com.mhussain.blamer;
 
 import android.os.Bundle;
 

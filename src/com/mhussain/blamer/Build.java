@@ -8,6 +8,7 @@ public class Build {
 	private String url;
 	private Statii status;
 	
+
 	private enum Statii {
 		Success,
 		Failure,
@@ -29,6 +30,18 @@ public class Build {
 		}
 	}
 	
+	public boolean isBuilding() {
+		return this.status == Statii.Building;
+	}
+	
+	public boolean wasSuccessful() {
+		return this.status == Statii.Success;
+	}
+	
+	public boolean failed() {
+		return this.status == Statii.Failure;
+	}
+		
 	public String getName() {
 		return name;
 	}

@@ -20,6 +20,14 @@
         		<action android:name="android.intent.action.ACTION_VIEW" />
                 <category android:name="android.intent.category.ALTERNATIVE" />
         	</intent-filter>
+        </activity>
+        		
+        <activity
+        	android:name="IndividualBuildDashboard">
+        	<intent-filter>
+        		<action android:name="android.intent.action.ACTION_VIEW" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+        	</intent-filter>
         </activity>		
 
     </application>
