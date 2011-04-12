@@ -13,14 +13,16 @@ public class BuildJSON {
 	private JSONObject build_data = null;
 	private ArrayList<Build> builds = new ArrayList<Build>();
 	private ArrayList<String> buildNames = new ArrayList<String>();
+	private final String API = "/api/json";
 	
 	public BuildJSON() {
-		this(null, null);
+		this(null, null, "");
 	}
 	
-	public BuildJSON(String host, String port) {
+	public BuildJSON(String host, String port, String suffix) {
 		
-		this.server = host.concat(":").concat(port);
+		this.server = host.concat(":").concat(port).concat("/" + suffix).concat(API);
+		System.err.println(this.server);
 		try {
 			this.getDataFromServer();
 		} 
@@ -50,6 +52,7 @@ public class BuildJSON {
 	        this.build_data = new JSONObject(data.toString());
 		} 
 		catch (Exception e) {
+			System.err.println("Exception thrown" + e.toString());
 			throw new Exception("Something bad happened in getting the JSON from " + this.getServerAddress() + ":" + e.toString() );
 		}
 		
@@ -72,8 +75,20 @@ public class BuildJSON {
     		try {
     			job = jobs.getJSONObject(job_index);
     			String name = (String)job.get("name"); 
+    			String color = (String)job.get("color");
+    			String status = "";
+    			if (color.equalsIgnoreCase("red")) {
+    				status = "failure";
+    			}
+    			else if (color.equalsIgnoreCase("green")) {
+    				status = "success";
+    			}
+    			else {
+    				status = "building";
+    			}
+    			
     			this.builds.add(
-    				new Build(name, (String)job.get("url"), (String)job.get("lastBuildStatus"))
+    				new Build(name, (String)job.get("url"), status)
     			);
     			this.buildNames.add(name);
 			} 

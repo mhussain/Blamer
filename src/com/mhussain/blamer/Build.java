@@ -15,10 +15,6 @@ public class Build implements Serializable {
 	
 	private String description;
 	private Date lastCommitDateTime;
-	public String getDescription() {
-		return description;
-	}
-
 
 	private String lastCommitBy;
 	private String lastCommitId;
@@ -47,6 +43,10 @@ public class Build implements Serializable {
 		this.lastCommitBy = "Clint Eastwood";
 		this.lastCommitId = "987678967896iyugjyghfytr65r567";
 		this.lastCommitDateTime = new Date();
+	}
+		
+	public String getDescription() {
+		return description;
 	}
 	
 	public void setDescription(String description) {

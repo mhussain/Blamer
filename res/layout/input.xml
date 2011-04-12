@@ -23,7 +23,7 @@
     		android:layout_height="wrap_content" 
     		android:id="@+id/host" 
     		android:layout_width="400px" 
-    		android:text="http://10.0.2.2"
+    		android:text="http://grimreapa.local/"
     		android:textColor="#000000" 
     		android:textSize="12sp">
     	</EditText>
@@ -46,7 +46,31 @@
  			android:layout_height="wrap_content" 
  			android:id="@+id/port" 
  			android:layout_width="400px" 
- 			android:text="8900" 
+ 			android:text="8081" 
+    		android:textColor="#000000" 
+ 			android:textSize="12sp">
+ 		</EditText>
+    </LinearLayout>
+    
+	
+    <LinearLayout android:orientation="horizontal"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingTop="15dp">
+    	
+	    <TextView 
+	    	android:text="Suffix" 
+	    	android:id="@+id/suffix_label" 
+	    	android:layout_width="wrap_content" 
+	    	android:layout_height="wrap_content" 
+    		android:textColor="#000000" 
+	    	android:padding="10dp">
+	    </TextView>
+ 		<EditText 
+ 			android:layout_height="wrap_content" 
+ 			android:id="@+id/suffix" 
+ 			android:layout_width="390px" 
+ 			android:text="" 
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
@@ -64,6 +88,6 @@
 			android:id="@+id/connect">
 		</Button>
 	</LinearLayout>
-	
+    
 </LinearLayout>
 

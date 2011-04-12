@@ -31,7 +31,8 @@ public class BuildDashboard extends ListActivity {
 		
     	BuildJSON dashboard = new BuildJSON(
     		serverInfo.getString("host"),
-    		serverInfo.getString("port")
+    		serverInfo.getString("port"),
+    		serverInfo.getString("suffix")
     	);
     	    	
     	super.onCreate(savedInstanceState);

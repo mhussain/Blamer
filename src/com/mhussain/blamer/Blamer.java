@@ -23,17 +23,21 @@ public class Blamer extends Activity {
         
         Button connect = (Button)this.findViewById(R.id.connect);
         final EditText host = (EditText)this.findViewById(R.id.host); 
-        final EditText port = (EditText)this.findViewById(R.id.port); 
+        final EditText port = (EditText)this.findViewById(R.id.port);
+        final EditText suffix = (EditText)this.findViewById(R.id.suffix);
         
         connect.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
 				String hostname = host.getText().toString();
 				String portNumber = port.getText().toString();
+				String suffixString = suffix.getText().toString();
+				
 				
 				Bundle serverInfo = new Bundle();
 				serverInfo.putString("host", hostname);
 				serverInfo.putString("port", portNumber);
+				serverInfo.putString("suffix", suffixString);
 				
 				Intent buildDashboard = new Intent(Blamer.this, BuildDashboard.class);
 				buildDashboard.putExtras(serverInfo);
