@@ -80,7 +80,7 @@ public class BuildJSON {
     			if (color.equalsIgnoreCase("red")) {
     				status = "failure";
     			}
-    			else if (color.equalsIgnoreCase("green")) {
+    			else if (color.equalsIgnoreCase("blue")) {
     				status = "success";
     			}
     			else {
