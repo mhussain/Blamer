@@ -16,13 +16,13 @@ public class BuildJSON {
 	private final String API = "/api/json";
 	
 	public BuildJSON() {
-		this(null, null, "");
+		/* Figure out a way of making this class grab all the JSON without these headaches */
 	}
-	
+
 	public BuildJSON(String host, String port, String suffix) {
 		
-		this.server = host.concat(":").concat(port).concat("/" + suffix).concat(API);
-		System.err.println(this.server);
+		this.server = host.concat(":").concat(port).concat((!"".equalsIgnoreCase(suffix) ? "/" + suffix : "")).concat(API);
+		
 		try {
 			this.getDataFromServer();
 		} 
@@ -35,28 +35,47 @@ public class BuildJSON {
 		return this.server;
 	}
 	
+	public JSONObject getLastBuild(String buildUrl) throws Exception {
+		JSONObject oneBuild = getJSONFromBuildServer(buildUrl);
+		
+		String lastBuildUrl = (String)oneBuild.getJSONObject("lastBuild").get("url");	
+		JSONObject lastBuild = getJSONFromBuildServer(lastBuildUrl);
+		
+		JSONObject changeSet = lastBuild.getJSONObject("changeSet").getJSONArray("items").getJSONObject(0);
+		
+		return changeSet;
+	}
+	
 	private void getDataFromServer() throws Exception {
+		this.build_data = getJSONFromBuildServer(this.getServerAddress());
+		
+		this.populateBuilds(this.build_data);
+	}
+
+	private JSONObject getJSONFromBuildServer(String url) throws Exception {
 		StringBuffer data = new StringBuffer();
+		JSONObject buildData = new JSONObject();
 		try {
-			URL yahoo = new URL(this.getServerAddress());
-	        URLConnection yc = yahoo.openConnection();
+			URL buildServer = new URL(url);
+	        URLConnection conn = buildServer.openConnection();
 	        BufferedReader in = new BufferedReader(
-	                                new InputStreamReader(
-	                                yc.getInputStream()));
+	        	new InputStreamReader(
+	        		conn.getInputStream()
+	        	)
+	        );
 	        String inputLine = null;
 
 	        while ((inputLine = in.readLine()) != null) {
 	            data.append(inputLine);
 	        }
 	        in.close();
-	        this.build_data = new JSONObject(data.toString());
+	        buildData = new JSONObject(data.toString());
 		} 
 		catch (Exception e) {
-			System.err.println("Exception thrown" + e.toString());
 			throw new Exception("Something bad happened in getting the JSON from " + this.getServerAddress() + ":" + e.toString() );
 		}
 		
-		this.populateBuilds(this.build_data);
+		return buildData;
 	}
 	
 	private void populateBuilds(JSONObject build_data) {

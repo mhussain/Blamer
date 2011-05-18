@@ -13,42 +13,42 @@
         {
             "name":"Mordor",
             "url":"http://localhost:8900/marvin",
-            "lastBuildStatus": "success"
+            "lastBuildStatus": "blue"
         },
         {
             "name":"Baradur",
             "url":"http://localhost:8900/development",
-            "lastBuildStatus": "success"
+            "lastBuildStatus": "blue"
         },
         {
             "name":"Minastirith",
             "url":"http://localhost:8900/gandalf",
-            "lastBuildStatus": "success"
+            "lastBuildStatus": "blue"
         },
         {
             "name":"Helmsdeep",
             "url":"http://localhost:8900/labs",
-            "lastBuildStatus": "success"
+            "lastBuildStatus": "blue"
         },
         {
             "name":"Gondor",
             "url":"http://localhost:8900/production",
-            "lastBuildStatus": "failure"
+            "lastBuildStatus": "red"
         },
         {
             "name":"Minasmorgul",
             "url":"http://localhost:8900/qa",
-            "lastBuildStatus": "failure"
+            "lastBuildStatus": "red"
         },
         {
             "name":"Edoras",
             "url":"http://localhost:8900/staging",
-            "lastBuildStatus": "failure"
+            "lastBuildStatus": "red"
         },
         {
             "name":"Isengard",
             "url":"http://localhost:8900/unit",
-            "lastBuildStatus": "building"
+            "lastBuildStatus": "anime_blue"
         }
     ],
     "overallLoad":{},

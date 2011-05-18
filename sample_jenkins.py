@@ -23,7 +23,7 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.wfile.write(f.read())
                 f.close()
                 return
-            elif self.path == '/':
+            elif self.path == '/api/json':
                 f = open(curdir + sep + 'fixtures/all_builds.json')
                 self.send_response(200)
                 self.send_header('Content-type',    'application/json')
