@@ -39,11 +39,18 @@ public class BuildJSON {
 		JSONObject oneBuild = getJSONFromBuildServer(buildUrl);
 		
 		String lastBuildUrl = (String)oneBuild.getJSONObject("lastBuild").get("url");	
-		JSONObject lastBuild = getJSONFromBuildServer(lastBuildUrl);
+		System.err.println("Last Build URL" + lastBuildUrl.concat("api/json/"));
+		JSONObject lastBuild = getJSONFromBuildServer(lastBuildUrl.concat("api/json/"));
 		
-		JSONObject changeSet = lastBuild.getJSONObject("changeSet").getJSONArray("items").getJSONObject(0);
+		System.err.println("Last Build Data" + lastBuild.toString()); 
 		
-		return changeSet;
+		JSONArray items = lastBuild.getJSONObject("changeSet").getJSONArray("items");
+		
+		if (items.isNull(0)) {
+			return null;
+		}
+		
+		return (JSONObject) items.get(0);
 	}
 	
 	private void getDataFromServer() throws Exception {
@@ -58,13 +65,14 @@ public class BuildJSON {
 		try {
 			URL buildServer = new URL(url);
 	        URLConnection conn = buildServer.openConnection();
+	        
 	        BufferedReader in = new BufferedReader(
 	        	new InputStreamReader(
 	        		conn.getInputStream()
 	        	)
 	        );
+	        
 	        String inputLine = null;
-
 	        while ((inputLine = in.readLine()) != null) {
 	            data.append(inputLine);
 	        }
@@ -72,7 +80,7 @@ public class BuildJSON {
 	        buildData = new JSONObject(data.toString());
 		} 
 		catch (Exception e) {
-			throw new Exception("Something bad happened in getting the JSON from " + this.getServerAddress() + ":" + e.toString() );
+			throw new Exception("Collection of JSON from " + url + "failed :" + e.toString() );
 		}
 		
 		return buildData;

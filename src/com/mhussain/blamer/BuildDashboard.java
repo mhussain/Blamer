@@ -81,11 +81,11 @@ public class BuildDashboard extends ListActivity {
 				public void onClick(View view) {
 					
 					if (build.failed()) {
-						Intent individualBuildInfo = new Intent(BuildDashboard.this, IndividualBuildDashboard.class);
+						Intent individualBuildDashboard = new Intent(BuildDashboard.this, IndividualBuildDashboard.class);
 						Bundle buildInfo = new Bundle();
 						buildInfo.putSerializable("build", build);
-						individualBuildInfo.putExtras(buildInfo);
-						startActivity(individualBuildInfo);
+						individualBuildDashboard.putExtras(buildInfo);
+						startActivity(individualBuildDashboard);
 					}
 					else if(build.isBuilding()) {
 						Toast.makeText(BuildDashboard.this, "Let it build first", Toast.LENGTH_LONG).show();

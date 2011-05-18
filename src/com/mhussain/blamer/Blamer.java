@@ -26,10 +26,12 @@ public class Blamer extends Activity {
         SharedPreferences serverData = this.getSharedPreferences(PREFS, MODE_WORLD_READABLE);
         final SharedPreferences.Editor serverDataEditor = serverData.edit();
 
-        String hostname = serverData.getString("host", "");
+        String hostname = serverData.getString("hostname", "");
 
         if (!"".equalsIgnoreCase(hostname)) {
-			startActivity(new Intent(Blamer.this, BuildDashboard.class));
+        	EditText host = (EditText)this.findViewById(R.id.host);
+        	host.setText(hostname);
+			//startActivity(new Intent(Blamer.this, BuildDashboard.class));
         }
         
         setContentView(

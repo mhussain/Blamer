@@ -1,5 +1,6 @@
 package com.mhussain.blamer;
 
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -25,9 +26,19 @@ public class IndividualBuildDashboard extends Activity {
         BuildJSON lastBuild = new BuildJSON();
         
         try {
+        	
 			JSONObject lastBuildData = lastBuild.getLastBuild(build.getUrl());
 			TextView who = (TextView)this.findViewById(R.id.last_committer);
-	        who.setText(lastBuildData.getJSONObject("author").get("fullName").toString());
+			String lastCommitBy = build.getLastCommitBy();
+			System.err.println("I am hrere 2");
+			
+			System.err.println("YYYYY" + lastCommitBy);
+			if (lastBuildData != null) {
+				lastCommitBy = lastBuildData.getJSONObject("author").get("name").toString();
+				System.err.println("XXXX" + lastCommitBy);
+			}
+			
+	        who.setText(lastCommitBy);
 	        
 	        TextView what = (TextView)this.findViewById(R.id.last_commit_id);
 	        what.setText(lastBuildData.getJSONObject("id").toString());
@@ -35,12 +46,9 @@ public class IndividualBuildDashboard extends Activity {
 	        TextView when = (TextView)this.findViewById(R.id.last_commit_date);
 	        when.setText(lastBuildData.getJSONObject("date").toString());
 	        
-		} catch (Exception e) {
+		} 
+        catch (Exception e) {
 			System.err.println("Could not get last Build information from " + build.getUrl() + ":" + e.toString());
 		}
-        
-        
-        
 	}
-	
 }

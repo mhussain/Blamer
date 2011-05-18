@@ -27,7 +27,7 @@ public class Build implements Serializable {
 	
 	public Build(String name, String url, String status) {
 		this.name = name;
-		this.url = url;
+		this.url = url.concat("api/json/");
 		
 		if (status.equalsIgnoreCase("success")) {
 			this.status = Statii.Success;
@@ -38,9 +38,9 @@ public class Build implements Serializable {
 		else {
 			this.status = Statii.Building;
 		}
-		this.description = "This is a build";
-		this.lastCommitBy = "Clint Eastwood";
-		this.lastCommitId = "987678967896iyugjyghfytr65r567";
+		this.description = "This build was automagically pushed by the server";
+		this.lastCommitBy = "Unknown";
+		this.lastCommitId = "Unknown";
 		this.lastCommitDateTime = new Date();
 	}
 		

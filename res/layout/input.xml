@@ -23,7 +23,7 @@
     		android:layout_height="wrap_content" 
     		android:id="@+id/host" 
     		android:layout_width="400px" 
-    		android:text="http://"
+    		android:text="http://ci.dev.int.realestate.com.au"
     		android:textColor="#000000" 
     		android:textSize="12sp">
     	</EditText>
