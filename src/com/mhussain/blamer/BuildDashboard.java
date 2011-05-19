@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,13 +45,14 @@ public class BuildDashboard extends ListActivity {
     			dashboard.getBuildInfo()
     		)
     	);
-
+    	
     	ListView lv = getListView();
     	lv.setBackgroundColor(Color.WHITE);
     	lv.setTextFilterEnabled(true);
+
     }
-    
-    class SpecialAdapter<E> extends ArrayAdapter<E> {
+
+	class SpecialAdapter<E> extends ArrayAdapter<E> {
     	
     	private ArrayList<Build> builds;
     	

@@ -6,3 +6,50 @@
     android:padding="10dp"
     android:textSize="16sp" >
 </TextView>
+
+<!--
+<Button android:orientation="horizontal"
+	android:text="Refresh" 
+	android:layout_width="200px" 
+	android:layout_height="wrap_content"
+	android:id="@+id/refresh"
+	android:padding="10dp"
+    android:textSize="16sp">
+</Button>
+-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+        
+    <ListView 
+	    android:id="@+id/android:list" 
+	    android:layout_weight="1"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent" />
+            
+    <TextView 
+	    android:id="@+id/build" 
+	    android:layout_weight="1"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:textStyle="bold" 
+	    android:gravity="center" 
+	/>
+    
+    <LinearLayout
+	    android:id="@+id/add_refresh"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@android:drawable/bottom_bar">
+	    <Button
+	        android:id="@+id/refresh"
+	        android:layout_width="fill_parent" 
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:text="Refresh"
+    	/>
+    </LinearLayout>
+        
+</LinearLayout>
+-->
