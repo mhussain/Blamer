@@ -1,6 +1,7 @@
 package com.mhussain.blamer;
 
 import org.apache.commons.lang.StringUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -25,30 +26,38 @@ public class IndividualBuildDashboard extends Activity {
    
         BuildJSON lastBuild = new BuildJSON();
         
+        JSONObject lastBuildData = null; 
+        
         try {
-        	
-			JSONObject lastBuildData = lastBuild.getLastBuild(build.getUrl());
-			TextView who = (TextView)this.findViewById(R.id.last_committer);
-			String lastCommitBy = build.getLastCommitBy();
-			System.err.println("I am hrere 2");
-			
-			System.err.println("YYYYY" + lastCommitBy);
-			if (lastBuildData != null) {
-				lastCommitBy = lastBuildData.getJSONObject("author").get("name").toString();
-				System.err.println("XXXX" + lastCommitBy);
-			}
-			
-	        who.setText(lastCommitBy);
-	        
-	        TextView what = (TextView)this.findViewById(R.id.last_commit_id);
-	        what.setText(lastBuildData.getJSONObject("id").toString());
-	        
-	        TextView when = (TextView)this.findViewById(R.id.last_commit_date);
-	        when.setText(lastBuildData.getJSONObject("date").toString());
-	        
-		} 
+			lastBuildData = lastBuild.getLastBuild(build.getUrl());
+        } 
         catch (Exception e) {
 			System.err.println("Could not get last Build information from " + build.getUrl() + ":" + e.toString());
 		}
+			
+		TextView who = (TextView)this.findViewById(R.id.last_committer);
+		TextView what = (TextView)this.findViewById(R.id.last_commit_id);
+		TextView when = (TextView)this.findViewById(R.id.last_commit_date);
+		
+		String lastCommitBy = build.getLastCommitBy();
+		String lastCommitId = build.getLastCommitId();
+		String lastCommitDate = build.getLastCommitDateTime().toString();
+		
+		if (lastBuildData != null) {
+			try {
+				lastCommitBy = lastBuildData.getJSONObject("author").get("name").toString();
+				lastCommitId = lastBuildData.getJSONObject("id").toString();
+				lastCommitDate = lastBuildData.getJSONObject("date").toString();
+			} 
+			catch (JSONException e) {
+				e.printStackTrace();
+			}
+
+		}
+		
+        who.setText(lastCommitBy);
+        what.setText(lastCommitId);
+        when.setText(lastCommitDate);
+		
 	}
 }
