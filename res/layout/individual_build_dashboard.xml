@@ -38,7 +38,7 @@
 
 		<TextView 
 			android:id="@+id/build_desc_label"
-			android:text="Desc"
+			android:text="Description"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
@@ -63,7 +63,7 @@
 	
 		<TextView 
 			android:id="@+id/last_commit_id_label"
-			android:text="What"
+			android:text="What commit broke the build?"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
@@ -88,7 +88,7 @@
 		
 		<TextView 
 			android:id="@+id/last_committer_label"
-			android:text="Who"
+			android:text="Who broke the build?"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
@@ -113,7 +113,7 @@
 	
 		<TextView 
 			android:id="@+id/last_commit_date_label"
-			android:text="When"
+			android:text="When did the build break?"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"

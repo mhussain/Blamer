@@ -1,6 +1,5 @@
 package com.mhussain.blamer;
 
-import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
