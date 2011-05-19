@@ -27,7 +27,6 @@ public class BuildDashboard extends ListActivity {
 
 		Bundle serverInfo = getIntent().getExtras();
 		
-		
     	BuildJSON dashboard = new BuildJSON(
     		serverInfo.getString("host"),
     		serverInfo.getString("port"),
