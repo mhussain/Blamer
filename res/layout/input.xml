@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
     >
     
-    <LinearLayout android:orientation="horizontal"
+    <TableRow android:orientation="horizontal"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:paddingTop="15dp">
@@ -23,14 +23,14 @@
     		android:layout_height="wrap_content" 
     		android:inputType="textUri" 
     		android:id="@+id/host" 
-    		android:layout_width="400px" 
+    		android:layout_width="380px" 
     		android:text="http://ci.dev.int.realestate.com.au"
     		android:textColor="#000000" 
     		android:textSize="12sp">
     	</EditText>
-    </LinearLayout>
+    </TableRow>
     
-    <LinearLayout android:orientation="horizontal"
+    <TableRow android:orientation="horizontal"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:paddingTop="15dp">
@@ -47,15 +47,15 @@
  			android:layout_height="wrap_content"
  			android:inputType="number" 
  			android:id="@+id/port" 
- 			android:layout_width="400px" 
+ 			android:layout_width="380px" 
  			android:text="8080" 
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
-    </LinearLayout>
+    </TableRow>
     
 	
-    <LinearLayout android:orientation="horizontal"
+    <TableRow android:orientation="horizontal"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:paddingTop="15dp">
@@ -72,25 +72,21 @@
  			android:layout_height="wrap_content" 
  			android:id="@+id/suffix" 
  			android:inputType="textWebEditText"
- 			android:layout_width="390px" 
+ 			android:layout_width="380px" 
  			android:text="" 
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
-    </LinearLayout>
-    
-    <LinearLayout android:orientation="vertical"
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:layout_gravity="center"
-    	android:padding="10dp">
-		<Button
+    </TableRow>
+    <TableRow
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+	    <Button
 			android:text="Connect" 
 			android:layout_width="200px" 
 			android:layout_height="wrap_content"
 			android:id="@+id/connect">
 		</Button>
-	</LinearLayout>
-    
-</LinearLayout>
+    </TableRow>
+</TableLayout>
 

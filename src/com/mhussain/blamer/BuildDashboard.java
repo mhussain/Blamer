@@ -9,10 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.markupartist.android.widget.PullToRefreshListView;
+import com.markupartist.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.mhussain.blamer.R;
 
 import android.app.ListActivity;
@@ -21,10 +22,22 @@ import android.content.Intent;
 import android.graphics.Color;
 
 public class BuildDashboard extends ListActivity {
-	
-	@Override
-    public void onCreate(Bundle savedInstanceState) {
 
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.build_dashboard);
+		
+		// Set a listener to be invoked when the list should be refreshed.
+		//ListView list = (ListView)this.findViewById(R.id.list);
+        ((PullToRefreshListView) getListView()).setOnRefreshListener(new OnRefreshListener() {
+            public void onRefresh() {
+                System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                System.err.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            }
+        });
+		
 		Bundle serverInfo = getIntent().getExtras();
 		
     	BuildJSON dashboard = new BuildJSON(
@@ -32,29 +45,23 @@ public class BuildDashboard extends ListActivity {
     		serverInfo.getString("port"),
     		serverInfo.getString("suffix")
     	);
-    	    	
-    	super.onCreate(savedInstanceState);
-
+    	
     	this.setListAdapter(
-    		new SpecialAdapter<String>(
+    		new DashboardListAdapter<String>(
     			this,
-    			R.layout.build_dashboard, 
-    			dashboard.getBuildNames(), 
+    			R.layout.build_dashboard,
+    			dashboard.getBuildNames(),
     			dashboard.getBuildInfo()
     		)
     	);
-    	
-    	ListView lv = getListView();
-    	lv.setBackgroundColor(Color.WHITE);
-    	lv.setTextFilterEnabled(true);
 
     }
 
-	class SpecialAdapter<E> extends ArrayAdapter<E> {
+	class DashboardListAdapter<E> extends ArrayAdapter<E> {
     	
     	private ArrayList<Build> builds;
     	
-    	public SpecialAdapter(Context c, int layout, List<E> data, ArrayList<Build> builds) {
+    	public DashboardListAdapter(Context c, int layout, List<E> data, ArrayList<Build> builds) {
     		super(c, layout, data);
     		this.builds = builds;
     	}
@@ -66,7 +73,7 @@ public class BuildDashboard extends ListActivity {
     		 
     		if (null == all_builds) {
     			LayoutInflater inflater = getLayoutInflater();
-    			all_builds = inflater.inflate(R.layout.build_dashboard, null);
+    			all_builds = inflater.inflate(R.layout.dashboard_row, null);
     		} 
     		
     		final TextView build_element = (TextView)all_builds.findViewById(R.id.build);
@@ -99,6 +106,5 @@ public class BuildDashboard extends ListActivity {
     		
     		return all_builds;
     	}
-    }
-
+	}
 }
