@@ -59,13 +59,6 @@ public class BuildDashboard extends ListActivity {
 	private class ReloadBuilds extends AsyncTask<Void, Void, String[]> {
 	    @Override
 	    protected void onPostExecute(String[] result) {
-	    	/*
-	    	Intent buildDashboard = new Intent(BuildDashboard.this, BuildDashboard.class);
-			Bundle buildInfo = new Bundle();
-			buildDashboard.putExtras(getIntent().getExtras());
-			buildDashboard.putExtras(buildInfo);
-			startActivity(buildDashboard);
-			*/
 	    	startActivity(getIntent());
 	    	finish();
 	        ((PullToRefreshListView) getListView()).onRefreshComplete();
