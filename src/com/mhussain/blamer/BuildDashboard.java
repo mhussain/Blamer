@@ -3,6 +3,7 @@ package com.mhussain.blamer;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +14,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.PullToRefreshListView;
+import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.mhussain.blamer.R;
 
@@ -21,6 +24,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class BuildDashboard extends ListActivity {
 
@@ -30,8 +34,10 @@ public class BuildDashboard extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.build_dashboard);
 		
-		// Set a listener to be invoked when the list should be refreshed.
-		//ListView list = (ListView)this.findViewById(R.id.list);
+       final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
+       actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.settings));
+       actionBar.setTitle("Settings");
+		
         ((PullToRefreshListView) getListView()).setOnRefreshListener(new OnRefreshListener() {
             public void onRefresh() {
             	new ReloadBuilds().execute();
@@ -56,6 +62,13 @@ public class BuildDashboard extends ListActivity {
     	);
     }
 	
+    public static Intent createIntent(Context context) {
+        Intent i = new Intent(context, Blamer.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return i;
+    }
+
+
 	private class ReloadBuilds extends AsyncTask<Void, Void, String[]> {
 	    @Override
 	    protected void onPostExecute(String[] result) {
@@ -66,10 +79,7 @@ public class BuildDashboard extends ListActivity {
 	    }
 
 		@Override
-		protected String[] doInBackground(Void... arg0) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		protected String[] doInBackground(Void... arg0) { return null; }
 	}
 
 	class DashboardListAdapter<E> extends ArrayAdapter<E> {

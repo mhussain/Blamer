@@ -6,5 +6,5 @@
     <string name="pull_to_refresh_release_label">Release to refresh...</string>
     <string name="pull_to_refresh_refreshing_label">Loading...</string>
     <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
-    
+    <string name="actionbar_activity_not_found">Failed to open intent...</string>
 </resources>

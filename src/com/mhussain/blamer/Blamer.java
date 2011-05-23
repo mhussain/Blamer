@@ -12,8 +12,10 @@ import android.content.SharedPreferences;
 
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ViewFlipper;
 
 public class Blamer extends Activity {
 
@@ -31,7 +33,6 @@ public class Blamer extends Activity {
         if (!"".equalsIgnoreCase(hostname)) {
         	EditText host = (EditText)this.findViewById(R.id.host);
         	host.setText(hostname);
-			//startActivity(new Intent(Blamer.this, BuildDashboard.class));
         }
         
         setContentView(
@@ -61,6 +62,11 @@ public class Blamer extends Activity {
 				
 				Intent buildDashboard = new Intent(Blamer.this, BuildDashboard.class);
 				buildDashboard.putExtras(serverInfo);
+				/*
+				ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.details);
+				viewFlipper.setAnimation(AnimationUtils.loadAnimation(v.getContext(), R.anim.slide_out_left));
+				*/
+				
 				startActivity(buildDashboard);
 			}
 		});
