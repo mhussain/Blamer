@@ -3,6 +3,7 @@ package com.mhussain.blamer;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,8 +34,7 @@ public class BuildDashboard extends ListActivity {
 		//ListView list = (ListView)this.findViewById(R.id.list);
         ((PullToRefreshListView) getListView()).setOnRefreshListener(new OnRefreshListener() {
             public void onRefresh() {
-                System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                System.err.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            	new ReloadBuilds().execute();
             }
         });
 		
@@ -54,8 +54,30 @@ public class BuildDashboard extends ListActivity {
     			dashboard.getBuildInfo()
     		)
     	);
-
     }
+	
+	private class ReloadBuilds extends AsyncTask<Void, Void, String[]> {
+	    @Override
+	    protected void onPostExecute(String[] result) {
+	    	/*
+	    	Intent buildDashboard = new Intent(BuildDashboard.this, BuildDashboard.class);
+			Bundle buildInfo = new Bundle();
+			buildDashboard.putExtras(getIntent().getExtras());
+			buildDashboard.putExtras(buildInfo);
+			startActivity(buildDashboard);
+			*/
+	    	startActivity(getIntent());
+	    	finish();
+	        ((PullToRefreshListView) getListView()).onRefreshComplete();
+	        super.onPostExecute(result);
+	    }
+
+		@Override
+		protected String[] doInBackground(Void... arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	}
 
 	class DashboardListAdapter<E> extends ArrayAdapter<E> {
     	
