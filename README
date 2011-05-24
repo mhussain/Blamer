@@ -1,1 +1,6 @@
 Android app to detect broken Jenkins builds
+
+Action Bar forked from "https://github.com/johannilsson/android-actionbar"
+Pull to refresh forked from "https://github.com/johannilsson/android-pulltorefresh"
+
+Design done by "https://github.com/samweller"
