@@ -3,6 +3,7 @@ package com.mhussain.blamer;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -19,7 +20,7 @@ public class SplashScreen extends Activity {
 		setContentView(R.layout.splash_screen);
 
 		final SharedPreferences serverData = this.getSharedPreferences(PREFS, MODE_PRIVATE);
-		
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
 		new Handler().postDelayed(new Runnable() {
 			public void run() {
