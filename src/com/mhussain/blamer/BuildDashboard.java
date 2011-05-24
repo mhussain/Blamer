@@ -3,7 +3,6 @@ package com.mhussain.blamer;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.PullToRefreshListView;
-import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.mhussain.blamer.R;
 
@@ -120,10 +118,10 @@ public class BuildDashboard extends ListActivity {
 						startActivity(individualBuildDashboard);
 					}
 					else if(build.isBuilding()) {
-						Toast.makeText(BuildDashboard.this, "Let it build first", Toast.LENGTH_LONG).show();
+						Toast.makeText(BuildDashboard.this, "Please let it build!", Toast.LENGTH_LONG).show();
 					}
 					else {
-						Toast.makeText(BuildDashboard.this, "It was successful, why do you care?", Toast.LENGTH_LONG).show();
+						Toast.makeText(BuildDashboard.this, "Congratulations, the last build was successful!", Toast.LENGTH_LONG).show();
 					}
 				}
     			
