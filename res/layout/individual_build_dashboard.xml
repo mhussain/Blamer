@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFFFFF"
->
-    <LinearLayout android:orientation="horizontal"
+	>
+
+    <TableRow android:orientation="horizontal"
 	   	android:layout_width="wrap_content"
 	   	android:layout_height="wrap_content"
 	   	android:paddingTop="15dp"
+	    android:background="@drawable/rounded_background"
 	>
 	    	
 		<TextView 
 			android:id="@+id/build_name_label"
-			android:text="Build Name"
-		    android:layout_width="wrap_content"
+			android:text="Name"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/build_name"
@@ -26,107 +27,111 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
-	</LinearLayout>
+	</TableRow>
 	
-    <LinearLayout android:orientation="horizontal"
-	   	android:layout_width="wrap_content"
+    <TableRow android:orientation="horizontal"
+	   	android:layout_width="fill_parent"
 	   	android:layout_height="wrap_content"
 	   	android:paddingTop="15dp"
+	    android:background="@drawable/rounded_background"
 	>
 
 		<TextView 
 			android:id="@+id/build_desc_label"
 			android:text="Description"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/build_desc"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
-	</LinearLayout>
+	</TableRow>
 	
-	<LinearLayout android:orientation="horizontal"
+	<TableRow android:orientation="horizontal"
 	   	android:layout_width="wrap_content"
 	   	android:layout_height="wrap_content"
+	    android:background="@drawable/rounded_background"
 	   	android:paddingTop="15dp"
 	>
 	
 		<TextView 
 			android:id="@+id/last_commit_id_label"
-			android:text="What commit broke the build?"
-		    android:layout_width="wrap_content"
+			android:text="What?"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_commit_id"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
-	</LinearLayout>
+	</TableRow>
 	
-    <LinearLayout android:orientation="horizontal"
-	   	android:layout_width="wrap_content"
+    <TableRow android:orientation="horizontal"
+	   	android:layout_width="fill_parent"
 	   	android:layout_height="wrap_content"
+	    android:background="@drawable/rounded_background"
 	   	android:paddingTop="15dp"
 	>
 		
 		<TextView 
 			android:id="@+id/last_committer_label"
-			android:text="Who broke the build?"
-		    android:layout_width="wrap_content"
+			android:text="Who?"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
-		    android:textColor="#000000"		    
-		    android:textSize="10sp" >
+		    android:textColor="#000000"	
+		    android:textSize="15sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_committer"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
-	</LinearLayout>
+	</TableRow>
 	
-    <LinearLayout android:orientation="horizontal"
-	   	android:layout_width="wrap_content"
+    <TableRow android:orientation="horizontal"
+	   	android:layout_width="fill_parent"
 	   	android:layout_height="wrap_content"
 	   	android:paddingTop="15dp"
+	    android:background="@drawable/rounded_background"
 	>
 	
 		<TextView 
 			android:id="@+id/last_commit_date_label"
-			android:text="When did the build break?"
-		    android:layout_width="wrap_content"
+			android:text="When?"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_commit_date"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="10sp" >
+		    android:textSize="15sp" >
 		</TextView>
-	</LinearLayout>
-</LinearLayout>
+	</TableRow>
+</TableLayout>

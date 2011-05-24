@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="10dp">
+<TableLayout 
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/rounded_background"
+    android:paddingTop="10dp"
     >
     
     <TableRow android:orientation="horizontal"
@@ -16,7 +18,7 @@
     		android:id="@+id/host_label" 
     		android:layout_width="wrap_content" 
     		android:layout_height="wrap_content" 
-    		android:textColor="#000000" 
+    		android:textColor="#FFFFFF" 
     		android:padding="10dp">
     	</TextView>
     	<EditText 
@@ -40,7 +42,7 @@
 	    	android:id="@+id/port_label" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content" 
-    		android:textColor="#000000" 
+    		android:textColor="#FFFFFF" 
 	    	android:padding="10dp">
 	    </TextView>
  		<EditText 
@@ -65,7 +67,7 @@
 	    	android:id="@+id/suffix_label" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content" 
-    		android:textColor="#000000" 
+    		android:textColor="#FFFFFF" 
 	    	android:padding="10dp">
 	    </TextView>
  		<EditText 
@@ -78,16 +80,20 @@
  			android:textSize="12sp">
  		</EditText>
     </TableRow>
-    <TableRow
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content">
-	    <Button
-			android:text="Connect" 
-			android:layout_width="200px" 
-			android:gravity="center"
-			android:layout_height="wrap_content"
-			android:id="@+id/connect">
-		</Button>
-    </TableRow>
 </TableLayout>
+
+<LinearLayout 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			android:gravity="center" 
+			android:padding="10dp" 
+			android:background="@drawable/rounded_background"> 
+	<Button
+		android:text="Connect" 
+		android:layout_width="300px" 
+		android:layout_height="wrap_content"
+		android:id="@+id/connect">
+	</Button>
+</LinearLayout>
+</LinearLayout>
 
