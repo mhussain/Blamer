@@ -63,7 +63,7 @@ public class BuildDashboard extends ListActivity {
     }
 	
     public static Intent createIntent(Context context) {
-        Intent i = new Intent(context, Blamer.class);
+        Intent i = new Intent(context, Settings.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return i;
     }

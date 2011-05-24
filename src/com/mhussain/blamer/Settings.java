@@ -1,7 +1,5 @@
 package com.mhussain.blamer;
 
-//import org.apache.commons.lang.StringUtils;
-
 import android.os.Bundle;
 
 import com.mhussain.blamer.R;
@@ -12,12 +10,10 @@ import android.content.SharedPreferences;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ViewFlipper;
 
-public class Blamer extends Activity {
+public class Settings extends Activity {
 
 	private final String PREFS = "shared_preferences";
 	
@@ -25,15 +21,8 @@ public class Blamer extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        SharedPreferences serverData = this.getSharedPreferences(PREFS, MODE_WORLD_READABLE);
+        SharedPreferences serverData = this.getSharedPreferences(PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor serverDataEditor = serverData.edit();
-
-        String hostname = serverData.getString("hostname", "");
-
-        if (!"".equalsIgnoreCase(hostname)) {
-        	EditText host = (EditText)this.findViewById(R.id.host);
-        	host.setText(hostname);
-        }
         
         setContentView(
         	R.layout.input
@@ -56,11 +45,11 @@ public class Blamer extends Activity {
 				serverInfo.putString("port", portNumber);
 				serverInfo.putString("suffix", suffixString);
 				
-				serverDataEditor.putString("hostname", hostname);
+				serverDataEditor.putString("host", hostname);
 				serverDataEditor.putString("port", portNumber);
 				serverDataEditor.putString("suffix", suffixString);
 				
-				Intent buildDashboard = new Intent(Blamer.this, BuildDashboard.class);
+				Intent buildDashboard = new Intent(Settings.this, BuildDashboard.class);
 				buildDashboard.putExtras(serverInfo);
 				
 				startActivity(buildDashboard);
