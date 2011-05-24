@@ -62,10 +62,6 @@ public class Blamer extends Activity {
 				
 				Intent buildDashboard = new Intent(Blamer.this, BuildDashboard.class);
 				buildDashboard.putExtras(serverInfo);
-				/*
-				ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.details);
-				viewFlipper.setAnimation(AnimationUtils.loadAnimation(v.getContext(), R.anim.slide_out_left));
-				*/
 				
 				startActivity(buildDashboard);
 			}

@@ -84,6 +84,7 @@
 	    <Button
 			android:text="Connect" 
 			android:layout_width="200px" 
+			android:gravity="center"
 			android:layout_height="wrap_content"
 			android:id="@+id/connect">
 		</Button>
