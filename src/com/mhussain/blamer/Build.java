@@ -38,7 +38,7 @@ public class Build implements Serializable {
 		else {
 			this.status = Statii.Building;
 		}
-		this.description = "This build was automagically pushed by the server";
+		this.description = "Build pushed by Server";
 		this.lastCommitBy = "Unknown";
 		this.lastCommitId = "Unknown";
 		this.lastCommitDateTime = new Date();

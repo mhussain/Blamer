@@ -6,6 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:color="#FFFFFF"
+    android:background="@drawable/splash"
     >
     <com.markupartist.android.widget.ActionBar
  		android:id="@+id/actionbar"

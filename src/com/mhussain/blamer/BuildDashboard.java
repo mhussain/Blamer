@@ -34,7 +34,6 @@ public class BuildDashboard extends ListActivity {
 		
        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
        actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.settings));
-       actionBar.setTitle("Settings");
 		
         ((PullToRefreshListView) getListView()).setOnRefreshListener(new OnRefreshListener() {
             public void onRefresh() {

@@ -3,6 +3,8 @@
 	android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/splash"
+    android:padding="10dp"
 	>
 
     <TableRow android:orientation="horizontal"
@@ -40,7 +42,7 @@
 
 		<TextView 
 			android:id="@+id/build_desc_label"
-			android:text="Description"
+			android:text="Desc"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
