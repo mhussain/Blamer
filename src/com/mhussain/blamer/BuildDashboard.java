@@ -49,6 +49,8 @@ public class BuildDashboard extends ListActivity {
     		serverInfo.getString("suffix")
     	);
     	
+    	System.err.println("Build Dashboard" + dashboard.toString());
+    	
     	this.setListAdapter(
     		new DashboardListAdapter<String>(
     			this,

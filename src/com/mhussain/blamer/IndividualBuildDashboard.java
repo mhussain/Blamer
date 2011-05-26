@@ -5,8 +5,11 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +19,7 @@ import android.widget.Toast;
 
 public class IndividualBuildDashboard extends Activity {
 	
-	private String contactText = "Email ";
+	private String contactText = "SMS ";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,9 @@ public class IndividualBuildDashboard extends Activity {
         String lastCommitId = build.getLastCommitId();
         String lastCommitDate = build.getLastCommitDateTime().toString();
         
+        final String SMS_MESSAGE = "You broke '" + build.getName() + "' on '" + lastCommitDate + "' with commit = '" + lastCommitId + "'";
+        
+        final String person_name = lastCommitBy;
         JSONObject lastBuildData = null; 
         
         try {
@@ -70,7 +76,43 @@ public class IndividualBuildDashboard extends Activity {
 		contact.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				String phoneNumber = null;
 				Toast.makeText(IndividualBuildDashboard.this, "Sending SMS", Toast.LENGTH_SHORT).show();
+				
+				ContentResolver cr = getContentResolver();
+		        Cursor contacts = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+		       
+		        if (contacts.getCount() > 0) {
+		        	while (contacts.moveToNext()) {
+		        		String id = contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts._ID));
+		        		
+		        		String contact_name = contacts.getString(
+		        			contacts.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
+		        		);
+		        		
+		        		if (contact_name.equalsIgnoreCase(person_name) != true) {
+		        			continue;
+		        		}
+		        		else {
+		        			if (Integer.parseInt(contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+		        				Cursor phoneNumbers = cr.query(
+	        			 		    ContactsContract.CommonDataKinds.Phone.CONTENT_URI, 
+	        			 		    null, 
+	        			 		    ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?", 
+	        			 		    new String[]{id}, null
+	        			 		);
+		        				
+		        				while(phoneNumbers.moveToNext()) {
+		        					
+		        					phoneNumber = phoneNumbers.getString(phoneNumbers.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DATA));
+		        				}
+		        				
+		        				phoneNumbers.close();
+		        			}
+		        		}
+		            }
+		        }
+		        contacts.close();
 				
 				SmsManager smsManager = SmsManager.getDefault();
 				
@@ -78,7 +120,7 @@ public class IndividualBuildDashboard extends Activity {
 				PendingIntent deliveredPI = PendingIntent.getBroadcast(IndividualBuildDashboard.this, 0,
                         new Intent("sms_delivered"), 0);
 
-				smsManager.sendTextMessage("0424726928", null, "You broke the build", sentPI, deliveredPI);
+				smsManager.sendTextMessage(phoneNumber, null, SMS_MESSAGE, sentPI, deliveredPI);
 			}
 		});
 		
