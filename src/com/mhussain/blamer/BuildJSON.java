@@ -2,6 +2,8 @@ package com.mhussain.blamer;
 
 import org.json.*;
 
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.*;
@@ -47,6 +49,7 @@ public class BuildJSON {
 		JSONArray items = lastBuild.getJSONObject("changeSet").getJSONArray("items");
 		
 		if (items.isNull(0)) {
+			System.err.println(" items is null");
 			return null;
 		}
 		

@@ -32,13 +32,7 @@ public class IndividualBuildDashboard extends Activity {
         String lastCommitBy = build.getLastCommitBy();
         String lastCommitId = build.getLastCommitId();
         String lastCommitDate = build.getLastCommitDateTime().toString();
-        
-        final String SMS_MESSAGE = "You broke '" + build.getName() + "' on '" + lastCommitDate + "' with commit = '" + lastCommitId + "'";
-        
-        final String person_name = lastCommitBy;
-        
-        String contactId  = this.getContactID(person_name);
-       
+        String description = build.getDescription();
         
         JSONObject lastBuildData = null; 
         
@@ -50,15 +44,20 @@ public class IndividualBuildDashboard extends Activity {
 		}
         if (lastBuildData != null) {
         	try {
-        		lastCommitBy = lastBuildData.getJSONObject("author").get("name").toString();
-        		lastCommitId = lastBuildData.getJSONObject("id").toString();
-        		lastCommitDate = lastBuildData.getJSONObject("date").toString();
+        		lastCommitBy = lastBuildData.getJSONObject("author").get("fullName").toString();
+        		lastCommitId = lastBuildData.get("id").toString();
+        		lastCommitDate = lastBuildData.get("date").toString();
+        		description = lastBuildData.get("comment").toString();
         	} 
         	catch (JSONException e) {
         		e.printStackTrace();
         	}
         	
         }
+        final String person_name = lastCommitBy;
+        String contactId  = this.getContactID(person_name);
+        final String SMS_MESSAGE = "You broke '" + build.getName() + "' on '" + lastCommitDate + "' with commit = '" + lastCommitId + "'";
+        final String PERSON_DOES_NOT_EXIST_IN_CONTACT="'" + person_name + "' does not exist in your contacts!";
         
         contactText = contactText.concat("'"+lastCommitBy+"'");
         
@@ -72,6 +71,7 @@ public class IndividualBuildDashboard extends Activity {
 		TextView who = (TextView)this.findViewById(R.id.last_committer);
 		TextView what = (TextView)this.findViewById(R.id.last_commit_id);
 		TextView when = (TextView)this.findViewById(R.id.last_commit_date);
+		TextView why = (TextView)this.findViewById(R.id.build_desc);
 
 		Button contact = (Button)this.findViewById(R.id.contact);
 		
@@ -98,13 +98,14 @@ public class IndividualBuildDashboard extends Activity {
 			});
 		}
 		else {
-			contact.setText("'" + person_name + "' does not exist in your contacts!");
+			contact.setText(PERSON_DOES_NOT_EXIST_IN_CONTACT);
 			contact.setEnabled(false);
 		}
 		
         who.setText(lastCommitBy);
         what.setText(lastCommitId);
         when.setText(lastCommitDate);
+        why.setText(description);
 		
 	}
 	

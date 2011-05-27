@@ -28,7 +28,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/build_name"
@@ -36,7 +36,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 	</TableRow>
 	
@@ -54,7 +54,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/build_desc"
@@ -62,7 +62,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 	</TableRow>
 	
@@ -80,7 +80,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_commit_id"
@@ -88,7 +88,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 	</TableRow>
 	
@@ -106,7 +106,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"	
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_committer"
@@ -114,7 +114,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 	</TableRow>
 	
@@ -132,7 +132,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"		    
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 		<TextView 
 			android:id="@+id/last_commit_date"
@@ -140,7 +140,7 @@
 		    android:layout_height="wrap_content"
 		    android:padding="10dp"
 		    android:textColor="#000000"
-		    android:textSize="15sp" >
+		    android:textSize="12sp" >
 		</TextView>
 	</TableRow>
 </TableLayout>
