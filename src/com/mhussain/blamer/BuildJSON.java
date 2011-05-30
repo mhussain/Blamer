@@ -39,12 +39,8 @@ public class BuildJSON {
 	
 	public JSONObject getLastBuild(String buildUrl) throws Exception {
 		JSONObject oneBuild = getJSONFromBuildServer(buildUrl);
-		
 		String lastBuildUrl = (String)oneBuild.getJSONObject("lastBuild").get("url");	
-		System.err.println("Last Build URL" + lastBuildUrl.concat("api/json/"));
-		JSONObject lastBuild = getJSONFromBuildServer(lastBuildUrl.concat("api/json/"));
-		
-		System.err.println("Last Build Data" + lastBuild.toString()); 
+		JSONObject lastBuild = getJSONFromBuildServer(lastBuildUrl.concat(API));
 		
 		JSONArray items = lastBuild.getJSONObject("changeSet").getJSONArray("items");
 		

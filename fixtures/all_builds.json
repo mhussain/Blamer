@@ -13,42 +13,42 @@
         {
             "name":"Mordor",
             "url":"http://localhost:8900/marvin",
-            "lastBuildStatus": "blue"
-        },
-        {
-            "name":"Baradur",
-            "url":"http://localhost:8900/development",
-            "lastBuildStatus": "blue"
-        },
-        {
-            "name":"Minastirith",
-            "url":"http://localhost:8900/gandalf",
-            "lastBuildStatus": "blue"
-        },
-        {
-            "name":"Helmsdeep",
-            "url":"http://localhost:8900/labs",
-            "lastBuildStatus": "blue"
-        },
-        {
-            "name":"Gondor",
-            "url":"http://localhost:8900/production",
-            "lastBuildStatus": "red"
-        },
-        {
-            "name":"Minasmorgul",
-            "url":"http://localhost:8900/qa",
-            "lastBuildStatus": "red"
-        },
-        {
-            "name":"Edoras",
-            "url":"http://localhost:8900/staging",
-            "lastBuildStatus": "red"
+            "color": "blue"
         },
         {
             "name":"Isengard",
             "url":"http://localhost:8900/unit",
-            "lastBuildStatus": "anime_blue"
+            "color": "anime_blue"
+        },
+        {
+            "name":"Baradur",
+            "url":"http://localhost:8900/development",
+            "color": "blue"
+        },
+        {
+            "name":"Gondor",
+            "url":"http://localhost:8900/production",
+            "color": "red"
+        },
+        {
+            "name":"Minastirith",
+            "url":"http://localhost:8900/gandalf",
+            "color": "blue"
+        },
+        {
+            "name":"Helmsdeep",
+            "url":"http://localhost:8900/labs",
+            "color": "blue"
+        },
+        {
+            "name":"Minasmorgul",
+            "url":"http://localhost:8900/qa",
+            "color": "red"
+        },
+        {
+            "name":"Edoras",
+            "url":"http://localhost:8900/staging",
+            "color": "red"
         }
     ],
     "overallLoad":{},

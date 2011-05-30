@@ -7,154 +7,172 @@
 	android:orientation="vertical" 
 	android:padding="10dp" 
 	android:background="@drawable/splash">
-<TableLayout
-	android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp"
-	>
-
-    <TableRow android:orientation="horizontal"
-	   	android:layout_width="wrap_content"
-	   	android:layout_height="wrap_content"
-	   	android:paddingTop="15dp"
-	    android:background="@drawable/rounded_background"
-	>
-	    	
-		<TextView 
-			android:id="@+id/build_name_label"
-			android:text="Name"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-		<TextView 
-			android:id="@+id/build_name"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-	</TableRow>
 	
-    <TableRow android:orientation="horizontal"
-	   	android:layout_width="fill_parent"
-	   	android:layout_height="wrap_content"
-	   	android:paddingTop="15dp"
-	    android:background="@drawable/rounded_background"
-	>
-
-		<TextView 
-			android:id="@+id/build_desc_label"
-			android:text="Desc"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"		    
-		    android:textSize="12sp" >
-		</TextView>
-		<TextView 
-			android:id="@+id/build_desc"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-	</TableRow>
+	<TableLayout
+		android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:padding="10dp"
+		>
 	
-	<TableRow android:orientation="horizontal"
-	   	android:layout_width="wrap_content"
-	   	android:layout_height="wrap_content"
-	    android:background="@drawable/rounded_background"
-	   	android:paddingTop="15dp"
-	>
-	
-		<TextView 
-			android:id="@+id/last_commit_id_label"
-			android:text="What?"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"		    
-		    android:textSize="12sp" >
-		</TextView>
-		<TextView 
-			android:id="@+id/last_commit_id"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-	</TableRow>
-	
-    <TableRow android:orientation="horizontal"
-	   	android:layout_width="fill_parent"
-	   	android:layout_height="wrap_content"
-	    android:background="@drawable/rounded_background"
-	   	android:paddingTop="15dp"
-	>
+	    <TableRow android:orientation="horizontal"
+		   	android:layout_width="wrap_content"
+		   	android:layout_height="wrap_content"
+		   	android:padding="5dp"
+		    android:background="@drawable/rounded_background"
+		>
+		    	
+			<TextView 
+				android:id="@+id/build_name_label"
+				android:text="Name"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+			<TextView 
+				android:id="@+id/build_name"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<View android:layout_width="fill_parent" android:layout_height="5dip">
+			</View>
+		</TableRow>
 		
-		<TextView 
-			android:id="@+id/last_committer_label"
-			android:text="Who?"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"	
-		    android:textSize="12sp" >
-		</TextView>
-		<TextView 
-			android:id="@+id/last_committer"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-	</TableRow>
+	    <TableRow android:orientation="horizontal"
+		   	android:layout_width="fill_parent"
+		   	android:layout_height="wrap_content"
+		   	android:padding="5dp"
+		    android:background="@drawable/rounded_background"
+		>
 	
-    <TableRow android:orientation="horizontal"
-	   	android:layout_width="fill_parent"
-	   	android:layout_height="wrap_content"
-	   	android:paddingTop="15dp"
-	    android:background="@drawable/rounded_background"
-	>
+			<TextView 
+				android:id="@+id/build_desc_label"
+				android:text="Desc"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"		    
+			    android:textSize="12sp" >
+			</TextView>
+			<TextView 
+				android:id="@+id/build_desc"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<View android:layout_width="fill_parent" android:layout_height="5dip">
+			</View>
+		</TableRow>
+		
+		<TableRow android:orientation="horizontal"
+		   	android:layout_width="wrap_content"
+		   	android:layout_height="wrap_content"
+		    android:background="@drawable/rounded_background"
+		   	android:padding="5dp"
+		>
+		
+			<TextView 
+				android:id="@+id/last_commit_id_label"
+				android:text="What?"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"		    
+			    android:textSize="12sp" >
+			</TextView>
+			<TextView 
+				android:id="@+id/last_commit_id"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<View android:layout_width="fill_parent" android:layout_height="5dip">
+			</View>
+		</TableRow>
+		
+	    <TableRow android:orientation="horizontal"
+		   	android:layout_width="fill_parent"
+		   	android:layout_height="wrap_content"
+		    android:background="@drawable/rounded_background"
+		   	android:padding="5dp"
+		>
+			
+			<TextView 
+				android:id="@+id/last_committer_label"
+				android:text="Who?"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"	
+			    android:textSize="12sp" >
+			</TextView>
+			<TextView 
+				android:id="@+id/last_committer"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<View android:layout_width="fill_parent" android:layout_height="5dip">
+			</View>
+		</TableRow>
+		
+	    <TableRow android:orientation="horizontal"
+		   	android:layout_width="fill_parent"
+		   	android:layout_height="wrap_content"
+		   	android:padding="5dp"
+		    android:background="@drawable/rounded_background"
+		>
+		
+			<TextView 
+				android:id="@+id/last_commit_date_label"
+				android:text="When?"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"		    
+			    android:textSize="12sp" >
+			</TextView>
+			<TextView 
+				android:id="@+id/last_commit_date"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dp"
+			    android:textColor="#000000"
+			    android:textSize="12sp" >
+			</TextView>
+		</TableRow>
+	</TableLayout>
 	
-		<TextView 
-			android:id="@+id/last_commit_date_label"
-			android:text="When?"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"		    
-		    android:textSize="12sp" >
-		</TextView>
-		<TextView 
-			android:id="@+id/last_commit_date"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:padding="10dp"
-		    android:textColor="#000000"
-		    android:textSize="12sp" >
-		</TextView>
-	</TableRow>
-</TableLayout>
-<LinearLayout 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:gravity="center" 
-	android:padding="10dp">
-	<Button
-		android:text="Contact" 
-		android:padding="10dp" 
-		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content"
-		android:id="@+id/contact">
-	</Button>
-</LinearLayout>
+	<LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:gravity="center" 
+		android:padding="10dp">
+		<Button
+			android:text="Contact" 
+			android:padding="10dp" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:id="@+id/contact">
+		</Button>
+	</LinearLayout>
 </LinearLayout>

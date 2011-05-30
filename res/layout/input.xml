@@ -5,92 +5,101 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center"
     android:background="@drawable/rounded_background"
-    android:paddingTop="10dp"
+    android:padding="5dp"
+    android:stretchColumns="1"
     >
     
     <TableRow android:orientation="horizontal"
-    	android:layout_width="wrap_content"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:paddingTop="15dp">
-    	
+		>    	
     	<TextView android:text="Host" 
     		android:id="@+id/host_label" 
     		android:layout_width="wrap_content" 
     		android:layout_height="wrap_content" 
     		android:textColor="#FFFFFF" 
-    		android:padding="10dp">
+    		android:padding="5dp">
     	</TextView>
     	<EditText 
     		android:layout_height="wrap_content" 
+    		android:layout_width="fill_parent" 
     		android:inputType="textUri" 
     		android:id="@+id/host" 
-    		android:layout_width="380px" 
     		android:text="http://ci.dev.int.realestate.com.au"
     		android:textColor="#000000" 
     		android:textSize="12sp">
     	</EditText>
+ 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		</View>
+
     </TableRow>
     
     <TableRow android:orientation="horizontal"
-    	android:layout_width="wrap_content"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:paddingTop="15dp">
-    	
+    	>
 	    <TextView 
 	    	android:text="Port" 
 	    	android:id="@+id/port_label" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content" 
     		android:textColor="#FFFFFF" 
-	    	android:padding="10dp">
+	    	android:padding="5dp">
 	    </TextView>
  		<EditText 
  			android:layout_height="wrap_content"
- 			android:inputType="number" 
+ 			android:layout_width="fill_parent" 
+ 			android:inputType="number"
+ 			android:paddingRight="10dp" 
  			android:id="@+id/port" 
- 			android:layout_width="380px" 
  			android:text="8080" 
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
+ 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		</View>
+ 		
     </TableRow>
     
 	
     <TableRow android:orientation="horizontal"
-    	android:layout_width="wrap_content"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:paddingTop="15dp">
-    	
+    	>
 	    <TextView 
 	    	android:text="Suffix" 
 	    	android:id="@+id/suffix_label" 
 	    	android:layout_width="wrap_content" 
 	    	android:layout_height="wrap_content" 
     		android:textColor="#FFFFFF" 
-	    	android:padding="10dp">
+	    	android:padding="5dp">
 	    </TextView>
  		<EditText 
  			android:layout_height="wrap_content" 
  			android:id="@+id/suffix" 
  			android:inputType="textWebEditText"
- 			android:layout_width="380px" 
+ 			android:layout_width="fill_parent" 
  			android:text="" 
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
+ 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		</View>
     </TableRow>
 </TableLayout>
+
+<View android:layout_width="fill_parent" android:layout_height="5dip"></View>
 
 <LinearLayout 
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" 
 			android:gravity="center" 
-			android:padding="10dp" 
-			android:background="@drawable/rounded_background"> 
+			android:padding="3dp"> 
 	<Button
-		android:text="Connect" 
-		android:layout_width="300px" 
+		android:text="Connect to Jenkins Server" 
+		android:layout_width="match_parent" 
 		android:layout_height="wrap_content"
 		android:id="@+id/connect">
 	</Button>

@@ -2,24 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="6dip">
-	<TextView 
-		android:id="@+id/build"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:padding="10dp"
-	    android:textSize="16sp" >
-	</TextView>
-	<ProgressBar
-		android:id="@+id/progress"
-		android:layout_width="wrap_content" 
-		android:layout_height="fill_parent">
-	</ProgressBar>
-	<ImageView
-   		android:id="@+id/information"
-   		android:layout_width="wrap_content"
-   		android:layout_height="fill_parent">
-	</ImageView>
-
+    android:orientation="vertical"
+    android:padding="5dip">
+    
+    <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
+	    <TableRow>
+			<TextView 
+				android:id="@+id/build"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:padding="5dp"
+			    android:textSize="15sp" >
+			</TextView>
+			<ProgressBar android:id="@+id/progress" android:layout_width="wrap_content" android:layout_height="fill_parent"></ProgressBar>
+			<ImageView
+		   		android:id="@+id/information"
+		   		android:layout_width="wrap_content"
+		   		android:layout_height="fill_parent">
+			</ImageView>
+		</TableRow>
+	</TableLayout>
+	
 </LinearLayout>

@@ -23,14 +23,6 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.wfile.write(f.read())
                 f.close()
                 return
-            elif self.path == '/api/json':
-                f = open(curdir + sep + 'fixtures/all_builds.json')
-                self.send_response(200)
-                self.send_header('Content-type',    'application/json')
-                self.end_headers()
-                self.wfile.write(f.read())
-                f.close()
-                return
             if self.path.endswith("marvin"):
                 f = open(curdir + sep + 'fixtures/marvin')
 
@@ -109,8 +101,14 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.wfile.write(f.read())
                 f.close()
                 return
-
-
+            if self.path == '/api/json':
+                f = open(curdir + sep + 'fixtures/all_builds.json')
+                self.send_response(200)
+                self.send_header('Content-type',    'application/json')
+                self.end_headers()
+                self.wfile.write(f.read())
+                f.close()
+                return
 
             return
 
