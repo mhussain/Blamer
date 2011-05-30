@@ -105,7 +105,7 @@ public class BuildDashboard extends ListActivity {
     			progress.setVisibility(View.VISIBLE);
     		}
     		
-    		label.setOnClickListener(new OnClickListener(){
+    		row.setOnClickListener(new OnClickListener(){
 				public void onClick(View view) {
 					
 					if (build.failed()) {
