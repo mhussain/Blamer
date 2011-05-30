@@ -88,11 +88,12 @@ public class IndividualBuildDashboard extends Activity {
 					SmsManager smsManager = SmsManager.getDefault();
 					
 					PendingIntent sentPI = PendingIntent.getBroadcast(IndividualBuildDashboard.this, 0, new Intent("sms_sent"), 0);
-					PendingIntent deliveredPI = PendingIntent.getBroadcast(IndividualBuildDashboard.this, 0,
-	                        new Intent("sms_delivered"), 0);
+					PendingIntent deliveredPI = PendingIntent.getBroadcast(IndividualBuildDashboard.this, 0, new Intent("sms_delivered"), 0);
 	
 					Toast.makeText(IndividualBuildDashboard.this, "Sending SMS to " + person_name, Toast.LENGTH_SHORT).show();
+					
 					smsManager.sendTextMessage(phone, null, SMS_MESSAGE, sentPI, deliveredPI);
+					
 					Toast.makeText(IndividualBuildDashboard.this, "SMS Sent", Toast.LENGTH_SHORT).show();
 				}
 			});
