@@ -83,6 +83,7 @@ public class BuildDashboard extends ListActivity {
     			row = inflater.inflate(R.layout.dashboard_row, null);
     		} 
     		row.setBackgroundColor(Color.WHITE);
+    		row.getBackground().setAlpha(150);
     		
     		final TextView label = (TextView)row.findViewById(R.id.build);
     		
