@@ -31,7 +31,7 @@
     		android:textColor="#000000" 
     		android:textSize="12sp">
     	</EditText>
- 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		<View android:layout_width="5dp" android:layout_height="fill_parent">
  		</View>
 
     </TableRow>
@@ -58,7 +58,7 @@
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
- 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		<View android:layout_width="5dp" android:layout_height="fill_parent">
  		</View>
  		
     </TableRow>
@@ -85,7 +85,7 @@
     		android:textColor="#000000" 
  			android:textSize="12sp">
  		</EditText>
- 		<View android:layout_width="5dp" android:layout_height="match_parent">
+ 		<View android:layout_width="5dp" android:layout_height="fill_parent">
  		</View>
     </TableRow>
 </TableLayout>
@@ -99,7 +99,7 @@
 			android:padding="3dp"> 
 	<Button
 		android:text="Connect to Jenkins Server" 
-		android:layout_width="match_parent" 
+		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
 		android:id="@+id/connect">
 	</Button>
