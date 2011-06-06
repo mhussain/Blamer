@@ -11,42 +11,42 @@
     "jobs":
     [
         {
-            "name":"Mordor",
+            "name":"AwesomeCode",
             "url":"http://localhost:8900/marvin",
             "color": "blue"
         },
         {
-            "name":"Isengard",
+            "name":"FixedCode",
             "url":"http://localhost:8900/unit",
             "color": "anime_blue"
         },
         {
-            "name":"Baradur",
+            "name":"AwesomeCode",
             "url":"http://localhost:8900/development",
             "color": "blue"
         },
         {
-            "name":"Gondor",
-            "url":"http://localhost:8900/production",
+            "name":"BrokenCode",
+            "url":"http://localhost:8900/production/",
             "color": "red"
         },
         {
-            "name":"Minastirith",
+            "name":"AwesomeCode",
             "url":"http://localhost:8900/gandalf",
             "color": "blue"
         },
         {
-            "name":"Helmsdeep",
+            "name":"AwesomeCode",
             "url":"http://localhost:8900/labs",
             "color": "blue"
         },
         {
-            "name":"Minasmorgul",
+            "name":"BrokenCode",
             "url":"http://localhost:8900/qa",
             "color": "red"
         },
         {
-            "name":"Edoras",
+            "name":"BrokenCode",
             "url":"http://localhost:8900/staging",
             "color": "red"
         }
